@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 
 // ── Types / Constants ─────────────────────────────────────────────────────────
-const API_BASE = "http://localhost:5000";
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000";
 
 const CLF_FEATURES = [
   { key: "koi_period",       label: "Orbital Period",         unit: "days",  min: 0.24,    max: 1000,    step: 0.01,  median: 9.753,   tooltip: "Time for one complete orbit around the host star." },
