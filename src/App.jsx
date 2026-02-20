@@ -502,7 +502,6 @@ export default function App() {
           display: "flex", alignItems: "center", justifyContent: "space-between",
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-            <img src="/exoscope-logo.svg" width="36" height="36" style={{ borderRadius: "50%" }} alt="logo" />
             <div>
               <div style={{
                 fontSize: 20, fontWeight: 900, letterSpacing: "-0.03em",
