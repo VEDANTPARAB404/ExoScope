@@ -62,7 +62,14 @@ def extract_features(data, feature_list):
            for f in feature_list]
     return np.array([row])
 
-# ── Routes ────────────────────────────────────────────────────────────────────
+# ── Health Check Route (VERY IMPORTANT FOR VERCEL) ─────────────────────────────
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({
+        "status": "ExoScope API Running",
+        "message": "Backend is live"
+    })
+
 @app.route("/health", methods=["GET"])
 def health():
     return jsonify({
@@ -72,6 +79,7 @@ def health():
         "reg_metrics": METADATA["reg_metrics"]
     })
 
+# ── Classification Route ───────────────────────────────────────────────────────
 @app.route("/predict/classification", methods=["POST"])
 def predict_classification():
     t0 = time.time()
@@ -95,6 +103,7 @@ def predict_classification():
     except Exception as e:
         return jsonify({"error": str(e), "trace": traceback.format_exc()}), 400
 
+# ── Regression Route ───────────────────────────────────────────────────────────
 @app.route("/predict/regression", methods=["POST"])
 def predict_regression():
     t0 = time.time()
@@ -128,6 +137,7 @@ def predict_regression():
     except Exception as e:
         return jsonify({"error": str(e), "trace": traceback.format_exc()}), 400
 
+# ── History Route ──────────────────────────────────────────────────────────────
 @app.route("/history", methods=["GET"])
 def history():
     conn = sqlite3.connect(DB_PATH)
@@ -146,5 +156,7 @@ def history():
 def metadata():
     return jsonify(METADATA)
 
+# ── Render Deployment Entry Point ──────────────────────────────────────────────
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
