@@ -1,13 +1,12 @@
 import React from 'react';
-import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* Removed the logo image as requested */}
-        <h1>ExoScope</h1>
+    <div>
+      <header style={{ padding: '0', margin: '0' }}>
+        <h1>Brand Name</h1>
       </header>
+      {/* Other components go here */}
     </div>
   );
 }
