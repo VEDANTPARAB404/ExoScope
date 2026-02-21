@@ -70,6 +70,8 @@ def home():
         "message": "Backend is live"
     })
 
+# ── Health Check Route (VERY IMPORTANT FOR RENDER & UPTIMEROBOT) ───────────────
+
 @app.route("/", methods=["GET"])
 def home():
     return "ExoScope Backend Running"
