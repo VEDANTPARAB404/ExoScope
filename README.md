@@ -378,15 +378,6 @@ Contributions welcome! Please:
 
 ---
 
-## 📄 License
-
-This project was developed for the **Innorave Eco-Hackathon 2025** under the theme "Sustainability & Environmental Intelligence."
-
-**Dataset:** NASA Exoplanet Archive — Kepler KOI Table  
-**Citation:** [https://exoplanetarchive.ipac.caltech.edu/](https://exoplanetarchive.ipac.caltech.edu/)
-
----
-
 ## 🙏 Acknowledgments
 
 - **NASA Kepler Mission** for the KOI dataset
