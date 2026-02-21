@@ -79,6 +79,10 @@ def health():
         "reg_metrics": METADATA["reg_metrics"]
     })
 
+    @app.route('/')
+def home():
+    return "ExoScope Backend Running"
+
 # ── Classification Route ───────────────────────────────────────────────────────
 @app.route("/predict/classification", methods=["POST"])
 def predict_classification():
