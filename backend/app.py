@@ -70,6 +70,10 @@ def home():
         "message": "Backend is live"
     })
 
+@app.route("/", methods=["GET"])
+def home():
+    return "ExoScope Backend Running"
+
 @app.route("/health", methods=["GET"])
 def health():
     return jsonify({
